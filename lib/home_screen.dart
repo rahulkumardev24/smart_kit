@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:smart_kit/domain/uitils.dart';
+import 'package:smart_kit/screen/image_resize_screen.dart';
 
 import 'constant/app_colors.dart';
 
@@ -11,7 +13,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<Map<String, dynamic>> tool = [
-    {"title": "Resize", "image": "lib/assets/images/resize.png"}
+    {"title": "Resize", "image": "lib/assets/images/resize.png"},
+    {"title": "PDF Converter", "image": "lib/assets/images/pdf-file-format.png"},
   ];
 
   @override
@@ -19,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text("Title"),
+          title: const Text("Title"),
           backgroundColor: Colors.white,
         ),
         body: GridView.builder(
@@ -27,23 +30,29 @@ class _HomeScreenState extends State<HomeScreen> {
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2, childAspectRatio: 3 / 6),
             itemBuilder: (context, index) {
-              return Column(
-                children: [
-                  Card(
-                    color: Colors.white,
-                    elevation: 7,
-                    shadowColor: AppColors.primaryLight,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset(tool[index]['image']),
+              return GestureDetector(
+                onTap: (){
+                  if(tool[index]['title'] == "Resize"){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const ImageResizeScreen()));
+                  }
+                },
+                child: Column(
+                  children: [
+                    Card(
+                      color: Colors.white,
+                      elevation: 7,
+                      shadowColor: AppColors.primaryLight,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset(tool[index]['image'] , height: 200,),
+                      ),
                     ),
-                  ),
-                  Text(
-                    tool[index]['title'],
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 32),
-                  )
-                ],
+                    Text(
+                      tool[index]['title'],
+                      style: myTextStyle26(fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),
               );
             }));
   }

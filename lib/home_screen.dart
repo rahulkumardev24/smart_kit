@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_kit/domain/uitils.dart';
 import 'package:smart_kit/screen/image_resize_screen.dart';
+import 'package:smart_kit/screen/image_to_pdf_screen.dart';
 
 import 'constant/app_colors.dart';
 
@@ -28,12 +29,16 @@ class _HomeScreenState extends State<HomeScreen> {
         body: GridView.builder(
             itemCount: tool.length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, childAspectRatio: 3 / 6),
+                crossAxisCount: 2, childAspectRatio: 3 / 3),
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: (){
                   if(tool[index]['title'] == "Resize"){
                     Navigator.push(context, MaterialPageRoute(builder: (context) => const ImageResizeScreen()));
+                  }
+                  if(tool[index]['title'] == "PDF Converter"){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) =>const ImageToPdfScreen() ));
+
                   }
                 },
                 child: Column(
@@ -44,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       shadowColor: AppColors.primaryLight,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Image.asset(tool[index]['image'] , height: 200,),
+                        child: Image.asset(tool[index]['image'] , height: 100,),
                       ),
                     ),
                     Text(

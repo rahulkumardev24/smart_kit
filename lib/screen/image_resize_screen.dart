@@ -4,6 +4,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:smart_kit/domain/uitils.dart';
 import 'package:smart_kit/widgets/my_filled_button.dart';
+import 'package:smart_kit/widgets/my_navigation_button.dart';
 import 'package:smart_kit/widgets/my_outline_button.dart';
 
 import '../constant/app_colors.dart';
@@ -52,7 +53,15 @@ class _ImageResizeScreenState extends State<ImageResizeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Resize your Image")),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: const Text("Resize your Image"),
+        backgroundColor: Colors.white,
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: MyNavigationButton(btnIcon: Icons.arrow_back_ios_new_outlined, onPressed: () { Navigator.pop(context); },),
+        ),
+      ),
       body: Column(
         children: [
           pickedImage != null

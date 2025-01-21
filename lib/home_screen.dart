@@ -15,7 +15,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List<Map<String, dynamic>> tool = [
     {"title": "Resize", "image": "lib/assets/images/resize.png"},
-    {"title": "PDF Converter", "image": "lib/assets/images/pdf-file-format.png"},
+    {
+      "title": "PDF Converter",
+      "image": "lib/assets/images/pdf-file-format.png"
+    },
   ];
 
   @override
@@ -32,13 +35,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisCount: 2, childAspectRatio: 3 / 3),
             itemBuilder: (context, index) {
               return GestureDetector(
-                onTap: (){
-                  if(tool[index]['title'] == "Resize"){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const ImageResizeScreen()));
+                onTap: () {
+                  if (tool[index]['title'] == "Resize") {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ImageResizeScreen()));
                   }
-                  if(tool[index]['title'] == "PDF Converter"){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) =>const ImageToPdfScreen() ));
-
+                  if (tool[index]['title'] == "PDF Converter") {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ImageToPdfScreen()));
                   }
                 },
                 child: Column(
@@ -49,7 +57,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       shadowColor: AppColors.primaryLight,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Image.asset(tool[index]['image'] , height: 100,),
+                        child: Image.asset(
+                          tool[index]['image'],
+                          height: 100,
+                        ),
                       ),
                     ),
                     Text(

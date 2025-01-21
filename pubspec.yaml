@@ -37,6 +37,10 @@ dependencies:
   cupertino_icons: ^1.0.8
   image_picker: ^1.1.2
   image_cropper: ^4.0.1
+  open_file: ^3.2.1
+  path_provider: ^2.0.0
+  pdf: ^3.11.1
+
 
 
 dev_dependencies:

@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:smart_kit/domain/uitils.dart';
+import 'package:smart_kit/screen/image_compress_screen.dart';
 import 'package:smart_kit/screen/image_resize_screen.dart';
 import 'package:smart_kit/screen/image_to_pdf_screen.dart';
-
 import 'constant/app_colors.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final ImageCompressionScreen compressionScreen;
+
+  const HomeScreen({super.key, required this.compressionScreen});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -18,6 +20,10 @@ class _HomeScreenState extends State<HomeScreen> {
     {
       "title": "PDF Converter",
       "image": "lib/assets/images/pdf-file-format.png"
+    },
+    {
+      "title": "Image Compression",
+      "image": "lib/assets/images/compress.png"
     },
   ];
 
@@ -47,6 +53,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => const ImageToPdfScreen()));
+                  }
+                  if (tool[index]['title'] == "Image Compression") {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ImageCompressionScreen()));
                   }
                 },
                 child: Column(

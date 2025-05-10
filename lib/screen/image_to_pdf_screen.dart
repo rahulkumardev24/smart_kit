@@ -113,36 +113,36 @@ class _ImageToPdfScreenState extends State<ImageToPdfScreen> {
           Expanded(
             child: _imageList.isNotEmpty
                 ? GridView.builder(
-                    itemCount: _imageList.length,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 3),
-                    itemBuilder: (context, index) {
-                      return SizedBox(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Image.file(
-                            _imageList[index],
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      );
-                    },
-                  )
-                : const Center(
-                    child: Text("No Image Selected"),
+              itemCount: _imageList.length,
+              gridDelegate:
+              const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3),
+              itemBuilder: (context, index) {
+                return SizedBox(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Image.file(
+                      _imageList[index],
+                      fit: BoxFit.cover,
+                    ),
                   ),
+                );
+              },
+            )
+                : const Center(
+              child: Text("No Image Selected"),
+            ),
           ),
           _pdfFile != null
               ? MyOutlineButton(
-                  btnText: "View and Download",
-                  textWeight: FontWeight.bold,
-                  btnBackground: AppColors.primaryLight.withOpacity(0.8),
-                  borderRadius: 8,
-                  onPressed: () => viewPDF(_pdfFile!),
-                )
+            btnText: "View and Download",
+            textWeight: FontWeight.bold,
+            btnBackground: AppColors.primaryLight.withOpacity(0.8),
+            borderRadius: 8,
+            onPressed: () => viewPDF(_pdfFile!),
+          )
               : const SizedBox(),
-         const  SizedBox(height: 20,),
+          const  SizedBox(height: 20,),
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(

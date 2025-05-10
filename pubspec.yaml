@@ -35,13 +35,31 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
-  image_picker: ^1.1.2
+
+  # Opens files with their default associated apps (PDFs, images, etc.)
   open_file: ^3.2.1
-  path_provider: ^2.0.0
-  pdf: ^3.11.1
+
+  # For cropping images with interactive UI
   image_cropper: ^9.1.0
-#  save image to gallery
+
+  # For picking images from device gallery or camera
+  image_picker: ^1.0.7
+
+  # Provides access to device filesystem paths (temp dir, downloads, etc.)
+  path_provider: ^2.1.1
+
+  # For image manipulation (resizing, compressing, format conversion)
+  image: ^4.1.4
+
+  # Handles runtime permissions (storage, camera, etc.)
+  permission_handler: ^12.0.0+1
+
+  # For PDF generation and manipulation
+  pdf: ^3.11.1
+
+  # Saves files (images, videos) to device gallery
   gallery_saver_plus: ^3.2.1
+
 
 
 

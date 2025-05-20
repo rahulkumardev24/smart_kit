@@ -25,7 +25,7 @@ class _ImageResizeScreenState extends State<ImageResizeScreen> {
   /// Pick and crop the image (unchanged logic)
   Future<void> pickAndCropImage() async {
     final XFile? image =
-    await imagePicker.pickImage(source: ImageSource.gallery);
+        await imagePicker.pickImage(source: ImageSource.gallery);
     if (image != null) {
       CroppedFile? croppedFile = await ImageCropper().cropImage(
         sourcePath: image.path,
@@ -103,35 +103,35 @@ class _ImageResizeScreenState extends State<ImageResizeScreen> {
                 width: double.infinity,
                 child: pickedImage != null
                     ? InteractiveViewer(
-                  panEnabled: true,
-                  minScale: 0.5,
-                  maxScale: 3,
-                  child: Image.file(
-                    pickedImage!,
-                    fit: BoxFit.contain,
-                  ),
-                )
+                        panEnabled: true,
+                        minScale: 0.5,
+                        maxScale: 3,
+                        child: Image.file(
+                          pickedImage!,
+                          fit: BoxFit.contain,
+                        ),
+                      )
                     : Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      "lib/assets/images/photo.png",
-                      height: 150,
-                      color: AppColors.primary.withOpacity(0.5),
-                    ),
-                    const SizedBox(height: 20),
-                    Text(
-                      "Select an image to resize",
-                      style: myTextStyle22(textColor: Colors.black45)
-                          .copyWith(fontWeight: FontWeight.w500),
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      "Tap the button below to choose from gallery",
-                      style: myTextStyle22(textColor: Colors.black26),
-                    ),
-                  ],
-                ),
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            "lib/assets/images/photo.png",
+                            height: 150,
+                            color: AppColors.primary.withOpacity(0.5),
+                          ),
+                          const SizedBox(height: 20),
+                          Text(
+                            "Select an image to resize",
+                            style: myTextStyle22(textColor: Colors.black45)
+                                .copyWith(fontWeight: FontWeight.w500),
+                          ),
+                          const SizedBox(height: 10),
+                          Text(
+                            "Tap the button below to choose from gallery",
+                            style: myTextStyle22(textColor: Colors.black26),
+                          ),
+                        ],
+                      ),
               ),
             ),
           ),
@@ -142,7 +142,8 @@ class _ImageResizeScreenState extends State<ImageResizeScreen> {
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
+              borderRadius:
+                  const BorderRadius.vertical(top: Radius.circular(30)),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.1),
@@ -189,7 +190,6 @@ class _ImageResizeScreenState extends State<ImageResizeScreen> {
                       child: MyFilledButton(
                         btnText: "Select Image",
                         textWeight: FontWeight.bold,
-
                         onPressed: pickAndCropImage,
                       ),
                     );

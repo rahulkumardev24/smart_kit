@@ -6,10 +6,6 @@ import 'package:smart_kit/screen/image_to_pdf_screen.dart';
 import 'constant/app_colors.dart';
 
 class HomeScreen extends StatefulWidget {
-  final ImageCompressionScreen compressionScreen;
-
-  const HomeScreen({super.key, required this.compressionScreen});
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -77,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     Text(
                       tool[index]['title'],
-                      style: myTextStyle26(fontWeight: FontWeight.bold),
+                      style: myTextStyle18(fontWeight: FontWeight.bold),
                     )
                   ],
                 ),

@@ -46,19 +46,21 @@ dependencies:
   image_picker: ^1.0.7
 
   # Provides access to device filesystem paths (temp dir, downloads, etc.)
-  path_provider: ^2.1.1
+  path_provider: ^2.1.5
 
   # For image manipulation (resizing, compressing, format conversion)
   image: ^4.1.4
-
   # Handles runtime permissions (storage, camera, etc.)
   permission_handler: ^12.0.0+1
-
+  # For file picking functionality
+  file_picker: ^10.1.7
   # For PDF generation and manipulation
   pdf: ^3.11.1
-
   # Saves files (images, videos) to device gallery
   gallery_saver_plus: ^3.2.1
+  pdfx: ^2.9.1
+
+
 
 
 

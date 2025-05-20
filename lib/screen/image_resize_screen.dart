@@ -137,7 +137,7 @@ class _ImageResizeScreenState extends State<ImageResizeScreen> {
           ),
           const Spacer(),
 
-          // Bottom action buttons with neumorphic design
+          /// Bottom action buttons with neumorphic design
           Container(
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
             decoration: BoxDecoration(

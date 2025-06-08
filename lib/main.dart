@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_kit/screen/image_background_remove_screen.dart';
 import 'package:smart_kit/screen/pdf_to_image_screen.dart';
+import 'package:smart_kit/screen/splash_screen.dart';
 
 
 import 'home_screen.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:ImageBackgroundRemoveScreen()
+      home:SplashScreen()
     );
   }
 }

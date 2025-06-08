@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gallery_saver_plus/gallery_saver.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image_cropper/image_cropper.dart';
-import 'package:smart_kit/domain/uitils.dart';
+import 'package:smart_kit/utils/uitils.dart';
 import 'package:smart_kit/widgets/my_filled_button.dart';
 import 'package:smart_kit/widgets/my_navigation_button.dart';
 import 'package:smart_kit/widgets/my_outline_button.dart';
@@ -122,13 +122,13 @@ class _ImageResizeScreenState extends State<ImageResizeScreen> {
                           const SizedBox(height: 20),
                           Text(
                             "Select an image to resize",
-                            style: myTextStyle22(textColor: Colors.black45)
+                            style: myTextStyle21(textColor: Colors.black45)
                                 .copyWith(fontWeight: FontWeight.w500),
                           ),
                           const SizedBox(height: 10),
                           Text(
                             "Tap the button below to choose from gallery",
-                            style: myTextStyle22(textColor: Colors.black26),
+                            style: myTextStyle21(textColor: Colors.black26),
                           ),
                         ],
                       ),

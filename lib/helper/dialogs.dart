@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../domain/uitils.dart';
+import '../utils/uitils.dart';
 
 class Dialogs {
   static void myShowSnackBar(

@@ -63,7 +63,8 @@ class _ImageBackgroundRemoveScreenState
     try {
       final imageBytes = await _selectedImage!.readAsBytes();
       final resultImage = await BackgroundRemover.instance.removeBg(imageBytes);
-      final byteData = await resultImage.toByteData(format: ImageByteFormat.png);
+      final byteData =
+          await resultImage.toByteData(format: ImageByteFormat.png);
       final resultBytes = byteData!.buffer.asUint8List();
 
       setState(() {
@@ -216,6 +217,7 @@ class _ImageBackgroundRemoveScreenState
       ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -226,7 +228,7 @@ class _ImageBackgroundRemoveScreenState
           if (_removedBackgroundImage != null)
             IconButton(
               icon: const Icon(Icons.save_alt),
-              onPressed: (){},
+              onPressed: () {},
               tooltip: 'Save Image',
             ),
         ],
@@ -400,7 +402,7 @@ class _ImageBackgroundRemoveScreenState
     );
   }
 
- /* Future<void> _saveImageToGallery() async {
+  /* Future<void> _saveImageToGallery() async {
     if (_removedBackgroundImage == null) return;
 
     try {
@@ -490,7 +492,8 @@ class _ColorPickerState extends State<ColorPicker> {
     return Column(
       children: [
         SizedBox(
-          height: MediaQuery.of(context).size.height * widget.pickerAreaHeightPercent,
+          height: MediaQuery.of(context).size.height *
+              widget.pickerAreaHeightPercent,
           child: GridView.count(
             crossAxisCount: 6,
             children: [

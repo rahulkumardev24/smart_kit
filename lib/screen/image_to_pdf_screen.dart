@@ -6,7 +6,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:smart_kit/widgets/my_navigation_button.dart';
 
 import '../constant/app_colors.dart';
-import '../domain/uitils.dart';
+import '../utils/uitils.dart';
 import '../widgets/my_filled_button.dart';
 import '../widgets/my_outline_button.dart';
 import 'package:pdf/pdf.dart';

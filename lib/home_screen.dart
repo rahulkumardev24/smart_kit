@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:smart_kit/screen/image_background_remove_screen.dart';
+import 'package:smart_kit/screen/pdf_merger_screen.dart';
 import 'package:smart_kit/screen/pdf_to_image_screen.dart';
 import 'package:smart_kit/utils/uitils.dart';
 import 'package:smart_kit/screen/image_compress_screen.dart';
 import 'package:smart_kit/screen/image_resize_screen.dart';
 import 'package:smart_kit/screen/image_to_pdf_screen.dart';
-import 'package:smart_kit/screen/pdf_merge_screen.dart';
+import 'package:smart_kit/screen/pdf_split_screen.dart';
 import 'constant/app_colors.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -40,9 +41,15 @@ class _HomeScreenState extends State<HomeScreen> {
       "image": "lib/assets/images/background remove.png",
       "color": Colors.redAccent
     },
+
     {
-      "title": "Merge PDFs",
-      "icon": Icons.merge_type,
+      "title": "PDF Merger",
+      "image": "lib/assets/images/background remove.png",
+      "color": Colors.redAccent
+    },
+    {
+      "title": "Split PDF",
+      "image": "lib/assets/images/split_pdf.png",
       "color": Colors.tealAccent
     },
   ];
@@ -78,7 +85,6 @@ class _HomeScreenState extends State<HomeScreen> {
             return ToolCard(
               title: tools[index]['title'],
               image: tools[index]['image'],
-              icon: tools[index]['icon'],
               color: tools[index]['color'],
               onTap: () =>
                   _navigateToToolScreen(context, tools[index]['title']),
@@ -105,12 +111,6 @@ class _HomeScreenState extends State<HomeScreen> {
             MaterialPageRoute(
                 builder: (context) => const ImageCompressionScreen()));
         break;
-      case "Merge PDFs":
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => const PdfMergeScreen()));
-        break;
       case "PDF To Image":
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => PdfToImageScreen()));
@@ -121,26 +121,31 @@ class _HomeScreenState extends State<HomeScreen> {
             MaterialPageRoute(
                 builder: (context) => const ImageBackgroundRemoveScreen()));
         break;
+      case "PDF Merger" :
+        Navigator.push(context, MaterialPageRoute(builder: (_)=> const PdfMergeScreen()));
+      case "Split PDF":
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => const PdfSplitScreen()));
+        break;
     }
   }
 }
 
 class ToolCard extends StatelessWidget {
   final String title;
-  final String? image;
-  final IconData? icon;
+  final String image;
   final Color color;
   final VoidCallback onTap;
 
   const ToolCard({
     required this.title,
-    this.image,
-    this.icon,
+    required this.image,
     required this.color,
     required this.onTap,
     Key? key,
-  })  : assert(image != null || icon != null, 'Either image or icon must be provided'),
-        super(key: key);
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -168,13 +173,11 @@ class ToolCard extends StatelessWidget {
                 color: color.withOpacity(0.1),
                 shape: BoxShape.circle,
               ),
-              child: icon != null
-                  ? Icon(icon, size: 40, color: color)
-                  : Image.asset(
-                      image!,
-                      height: 40,
-                      width: 40,
-                    ),
+              child: Image.asset(
+                image,
+                height: 40,
+                width: 40,
+              ),
             ),
             const SizedBox(height: 16),
             Text(
